@@ -51,7 +51,7 @@ else()
     #-------------------------------------------------------
     # Define "nvtx3-c" library for the NVTX v3 C API
     add_library(nvtx3-c INTERFACE ${OPTIONALLY_IMPORTED})
-    set_target_properties(nvtx3-c PROPERTIES VERSION ${NVTX3_VERSION})
+    #set_target_properties(nvtx3-c PROPERTIES VERSION ${NVTX3_VERSION})
     target_include_directories(nvtx3-c INTERFACE
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>"
         "$<INSTALL_INTERFACE:include>")
@@ -61,7 +61,7 @@ else()
     # Define "nvtx3-cpp" library for the NVTX v3 C++ API
     # Separate target allows attaching independent compiler requirements if needed
     add_library(nvtx3-cpp INTERFACE ${OPTIONALLY_IMPORTED})
-    set_target_properties(nvtx3-cpp PROPERTIES VERSION ${NVTX3_VERSION})
+    #set_target_properties(nvtx3-cpp PROPERTIES VERSION ${NVTX3_VERSION})
     target_link_libraries(nvtx3-cpp INTERFACE nvtx3-c)
 endif()
 
